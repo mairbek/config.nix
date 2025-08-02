@@ -2,7 +2,7 @@
   description = "mairbek's nix dotfiles";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     user   = "mairbek";
     system = "aarch64-darwin";
