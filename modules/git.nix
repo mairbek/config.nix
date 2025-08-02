@@ -3,7 +3,7 @@
 
 let
   username = lib.mkDefault "Mairbek Khadikov";
-  email    = lib.mkDefault "mairbek@conduit.xyz";
+  email    = lib.mkDefault "mkhadikov@gmail.com";
 in
 {
   programs.git = {
@@ -11,7 +11,7 @@ in
     userName  = username;
     userEmail = email;
 
-   ##–– Global ignore file ––––––––––––––––––––––––––––––––––––––
+    ##–– Global ignore file ––––––––––––––––––––––––––––––––––––––
     ignores = [
       ".DS_Store"
       "*.log"
@@ -26,17 +26,18 @@ in
       merge.conflictStyle= "zdiff3";
       diff.colorMoved    = "default";
       push.autoSetupRemote = true;
+      url."ssh://git@github.com/" = {
+        insteadOf = "https://github.com/";
+      };
+
+      url."ssh://git@gist.github.com/" = {
+        insteadOf = "https://gist.github.com/";
+      };
+    };
+    signing = {
+      key            = "1CFC99FE9A558EA3ABFF71421511D513BA410D74";
+      signByDefault  = true;
     };
 
-    ##–– Commit signing (comment out if you don’t sign) –––––––––
-    # signing = {
-    #   key            = "0xDEADBEEF";  # GPG key ID
-    #   signByDefault  = true;
-    # };
-
-    ##–– Credential helper: macOS keychain, or cache on Linux ––
-    # Use lib.mkIf so the same module works on every OS.
-    # credential.helper = lib.mkIf (pkgs.stdenv.isDarwin) "osxkeychain"
-    #                      (lib.mkIf pkgs.stdenv.isLinux  "cache --timeout=7200");
   };
 }

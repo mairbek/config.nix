@@ -11,4 +11,9 @@
   home.sessionVariables = {
     CONDUIT_ENV = "dev";
   };
+
+  programs.git = {
+    # override with work email
+    userEmail = "mairbek@conduit.xyz";
+  };
 }
