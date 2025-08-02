@@ -23,6 +23,7 @@
   in {
     homeConfigurations = {
       "m-conduit" = mkHome [ ./machines/m-conduit.nix ];
+      "mairbook" = mkHome [ ./machines/mairbook.nix ];
     };
   };
 }

@@ -22,7 +22,7 @@ in
    "oh-my-zsh" = {
       enable = true;
       theme  = "robbyrussell";
-      plugins = [ "git" "asdf" ];
+      plugins = [ "git" ];
     };
 
     initContent = ''

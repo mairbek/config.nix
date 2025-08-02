@@ -9,12 +9,11 @@
 
   # Environment variables unique to this machine.
   home.sessionVariables = {
-    MAIRBEK_DOTFILES_MACHINE = "m-conduit";
+    MAIRBEK_DOTFILES_MACHINE = "mairbook";
   };
 
   programs.git = {
-    # override with work email
-    userEmail = "mairbek@conduit.xyz";
+    userEmail = "mkhadikov@gmail.com";
     extraConfig = {
       signing = {
         key            = "AC0AAD64943B8374";
@@ -22,4 +21,4 @@
       };
     };
   };
-}
+} 

@@ -29,14 +29,9 @@ in
       url."ssh://git@github.com/" = {
         insteadOf = "https://github.com/";
       };
-
       url."ssh://git@gist.github.com/" = {
         insteadOf = "https://gist.github.com/";
       };
-    };
-    signing = {
-      key            = "1CFC99FE9A558EA3ABFF71421511D513BA410D74";
-      signByDefault  = true;
     };
   };
 }
