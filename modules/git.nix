@@ -38,6 +38,5 @@ in
       key            = "1CFC99FE9A558EA3ABFF71421511D513BA410D74";
       signByDefault  = true;
     };
-
   };
 }
