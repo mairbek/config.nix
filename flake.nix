@@ -15,10 +15,20 @@
     user   = "mairbek";
     system = "aarch64-darwin";
 
+    hmCli  = home-manager.packages.${system}.home-manager;
+
     mkHome = extraModules:
       home-manager.lib.homeManagerConfiguration {
-        pkgs    = import nixpkgs { inherit system; };
-        modules = [ ./config.nix ] ++ extraModules;
+        pkgs = import nixpkgs { inherit system; };
+
+        modules =
+          [
+            ./config.nix
+
+            # add the CLI to every profile’s ~/.nix-profile
+            { home.packages = [ hmCli ]; }
+          ]
+          ++ extraModules;
       };
   in {
     homeConfigurations = {
