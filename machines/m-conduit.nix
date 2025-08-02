@@ -4,12 +4,12 @@
   home.packages = with pkgs; [
   ];
 
-  home.username      = "mairbek";              # ← non-empty
-  home.homeDirectory = "/Users/mairbek";       # ← full path
+  home.username      = "mairbek";
+  home.homeDirectory = "/Users/mairbek";
 
-  # Environment variables unique to this box
+  # Environment variables unique to this machine.
   home.sessionVariables = {
-    CONDUIT_ENV = "dev";
+    MAIRBEK_DOTFILES_MACHINE = "m-conduit";
   };
 
   programs.git = {
