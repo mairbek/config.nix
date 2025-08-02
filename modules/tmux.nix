@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    tmux-mem-cpu-load
+  ];
+
   programs.tmux = {
     enable  = true;
     prefix  = "C-a";               # pulled from your file
