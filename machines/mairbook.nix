@@ -15,8 +15,9 @@
   programs.git = {
     userEmail = "mkhadikov@gmail.com";
     extraConfig = {
+      commit.gpgsign = true;
       signing = {
-        key            = "AC0AAD64943B8374";
+        key            = "F63B7E5365EC20AC134FF33B662CB6EC70C7B9BF";
         signByDefault  = true;
       };
     };

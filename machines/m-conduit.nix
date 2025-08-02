@@ -16,8 +16,9 @@
     # override with work email
     userEmail = "mairbek@conduit.xyz";
     extraConfig = {
+      commit.gpgsign = true; 
       signing = {
-        key            = "AC0AAD64943B8374";
+        key            = "1CFC99FE9A558EA3ABFF71421511D513BA410D74";
         signByDefault  = true;
       };
     };
