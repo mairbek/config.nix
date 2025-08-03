@@ -7,3 +7,8 @@ after that
 ```sh
 home-manager switch --flake .#mairbook
 ```
+
+for formatting run
+```
+treefmt
+```
