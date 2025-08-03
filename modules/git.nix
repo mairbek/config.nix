@@ -16,6 +16,7 @@ in
       ".DS_Store"
       "*.log"
       "*.swp"
+      ".direnv"
     ];
 
     ##–– Extra git-config not covered by first-class options ––––
