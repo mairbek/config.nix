@@ -8,6 +8,9 @@ in
     wget
     jq
     yq-go
+    # python
+    python314
+    uv
   ];
 
   programs.zsh = {
