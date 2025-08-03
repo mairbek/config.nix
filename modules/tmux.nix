@@ -6,9 +6,9 @@
   ];
 
   programs.tmux = {
-    enable  = true;
-    prefix  = "C-a";               # pulled from your file
-    terminal = "screen-256color";  # idem
+    enable = true;
+    prefix = "C-a"; # pulled from your file
+    terminal = "screen-256color"; # idem
 
     extraConfig = ''
       # enable activity monitoring

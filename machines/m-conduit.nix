@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
   ];
 
-  home.username      = "mairbek";
+  home.username = "mairbek";
   home.homeDirectory = "/Users/mairbek";
 
   # Environment variables unique to this machine.
@@ -16,10 +16,10 @@
     # override with work email
     userEmail = "mairbek@conduit.xyz";
     extraConfig = {
-      commit.gpgsign = true; 
+      commit.gpgsign = true;
       signing = {
-        key            = "1CFC99FE9A558EA3ABFF71421511D513BA410D74";
-        signByDefault  = true;
+        key = "1CFC99FE9A558EA3ABFF71421511D513BA410D74";
+        signByDefault = true;
       };
     };
   };

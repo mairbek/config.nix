@@ -1,14 +1,19 @@
 # modules/git.nix
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 let
   username = lib.mkDefault "Mairbek Khadikov";
-  email    = lib.mkDefault "mkhadikov@gmail.com";
+  email = lib.mkDefault "mkhadikov@gmail.com";
 in
 {
   programs.git = {
-    enable    = true;
-    userName  = username;
+    enable = true;
+    userName = username;
     userEmail = email;
 
     ##–– Global ignore file ––––––––––––––––––––––––––––––––––––––
@@ -22,10 +27,10 @@ in
     ##–– Extra git-config not covered by first-class options ––––
     extraConfig = {
       init.defaultBranch = "master";
-      core.editor        = "vim";
-      core.autocrlf      = "input";
-      merge.conflictStyle= "zdiff3";
-      diff.colorMoved    = "default";
+      core.editor = "vim";
+      core.autocrlf = "input";
+      merge.conflictStyle = "zdiff3";
+      diff.colorMoved = "default";
       push.autoSetupRemote = true;
       url."ssh://git@github.com/" = {
         insteadOf = "https://github.com/";

@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
   ];
 
-  home.username      = "mairbek";
+  home.username = "mairbek";
   home.homeDirectory = "/Users/mairbek";
 
   # Environment variables unique to this machine.
@@ -17,9 +17,9 @@
     extraConfig = {
       commit.gpgsign = true;
       signing = {
-        key            = "F63B7E5365EC20AC134FF33B662CB6EC70C7B9BF";
-        signByDefault  = true;
+        key = "F63B7E5365EC20AC134FF33B662CB6EC70C7B9BF";
+        signByDefault = true;
       };
     };
   };
-} 
+}

@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 let
 in
@@ -11,20 +16,23 @@ in
     # python
     python314
     uv
+    # nix
+    nixfmt-rfc-style
+    nixfmt-tree
   ];
 
   programs.zsh = {
-    enable = true;                 # ← HM now owns ~/.zshrc & friends
+    enable = true; # ← HM now owns ~/.zshrc & friends
     enableCompletion = true;
     autocd = true;
     history = {
-      size  = 10000;
+      size = 10000;
       ignoreDups = true;
     };
 
-   "oh-my-zsh" = {
+    "oh-my-zsh" = {
       enable = true;
-      theme  = "robbyrussell";
+      theme = "robbyrussell";
       plugins = [ "git" ];
     };
 
@@ -43,15 +51,14 @@ in
       add-zsh-hook precmd _nix_prompt_prefix
     '';
 
-
     plugins = [
       {
         name = "nix-shell";
-        src  = pkgs.fetchFromGitHub {
+        src = pkgs.fetchFromGitHub {
           owner = "chisui";
-          repo  = "zsh-nix-shell";
-          rev   = "master";
-          hash  = "sha256-Rtg8kWVLhXRuD2/Ctbtgz9MQCtKZOLpAIdommZhXKdE=";
+          repo = "zsh-nix-shell";
+          rev = "master";
+          hash = "sha256-Rtg8kWVLhXRuD2/Ctbtgz9MQCtKZOLpAIdommZhXKdE=";
         };
         file = "plugins/nix-shell/nix-shell.plugin.zsh";
       }
@@ -66,10 +73,10 @@ in
 
     # TODO(mairbek): what's the best way to generate ssh keys with nix?
     matchBlocks."github.com" = {
-      identityFile   = "~/.ssh/id_ed25519";
+      identityFile = "~/.ssh/id_ed25519";
       extraOptions = {
         AddKeysToAgent = "yes";
-        UseKeychain    = "yes";      # macOS-specific
+        UseKeychain = "yes"; # macOS-specific
       };
     };
   };
