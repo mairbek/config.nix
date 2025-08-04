@@ -16,6 +16,7 @@ in
     # python
     python314
     uv
+    cacert
     # nix
     nixfmt-rfc-style
     nixfmt-tree
@@ -87,6 +88,11 @@ in
     # TODO(mairbek): enable when zsh is configured with nix
     enableZshIntegration = true;
     silent = true;
+  };
+  home.sessionVariables = {
+    SSL_CERT_FILE      = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
+    REQUESTS_CA_BUNDLE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
+    NIX_SSL_CERT_FILE  = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
   };
 
 }
