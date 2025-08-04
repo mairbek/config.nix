@@ -12,5 +12,6 @@
     ./modules/shell.nix
     ./modules/git.nix
     ./modules/tmux.nix
+    ./modules/gcloud.nix
   ];
 }
