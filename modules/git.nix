@@ -22,6 +22,8 @@ in
       "*.log"
       "*.swp"
       ".direnv"
+      ".cache"
+      ".venv"
     ];
 
     ##–– Extra git-config not covered by first-class options ––––
@@ -38,6 +40,15 @@ in
       url."ssh://git@gist.github.com/" = {
         insteadOf = "https://gist.github.com/";
       };
+    };
+    aliases = {
+      co = "checkout";
+      cob = "checkout -b";
+      ac = "!git add -A && git commit -m";
+      amend = "commit -a --amend";
+      s = "status";
+      fom = "fetch origin/main";
+      foms = "fetch origin/main";
     };
   };
 }
