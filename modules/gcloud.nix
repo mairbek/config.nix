@@ -40,5 +40,4 @@ in
 
   # Optional: Add shell completion for gcloud
   programs.zsh.enable = true;
-  programs.bash.enable = true;
 }
