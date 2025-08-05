@@ -49,6 +49,7 @@ in
       s = "status";
       fom = "fetch origin/main";
       foms = "fetch origin/main";
+      c-p = "cherry-pick";
     };
   };
 }
