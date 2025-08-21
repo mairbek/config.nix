@@ -47,8 +47,8 @@ in
       ac = "!git add -A && git commit -m";
       amend = "commit -a --amend";
       s = "status";
-      fom = "fetch origin/main";
-      foms = "fetch origin/main";
+      fom = "fetch origin main";
+      foms = "fetch origin master";
       c-p = "cherry-pick";
     };
   };
