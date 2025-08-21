@@ -13,11 +13,7 @@ in
     wget
     jq
     yq-go
-    # python
-    python314
-    uv
     cacert
-    # nix
     nixfmt-rfc-style
     nixfmt-tree
   ];

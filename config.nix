@@ -13,5 +13,6 @@
     ./modules/git.nix
     ./modules/tmux.nix
     ./modules/gcloud.nix
+    ./modules/helix.nix
   ];
 }
