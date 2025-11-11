@@ -18,6 +18,7 @@ in
 {
   home.packages = [
     gcloud
+    pkgs.google-cloud-sql-proxy
   ];
 
   # Environment variables for Google Cloud SDK
