@@ -16,6 +16,7 @@ in
     cacert
     nixfmt-rfc-style
     nixfmt-tree
+    cmatrix
   ];
 
   programs.zsh = {
