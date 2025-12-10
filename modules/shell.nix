@@ -17,6 +17,17 @@ in
     nixfmt-rfc-style
     nixfmt-tree
     cmatrix
+    (python313.withPackages (
+      p:
+      (with p; [
+        python-lsp-ruff
+        python-lsp-server
+        ipykernel
+        pip
+      ])
+    ))
+    uv
+    ruff
   ];
 
   programs.zsh = {

@@ -11,16 +11,7 @@ in
 {
   home.packages = with pkgs; [
     rust-analyzer
-    (python313.withPackages (
-      p:
-      (with p; [
-        python-lsp-ruff
-        python-lsp-server
-      ])
-    ))
-    ruff
-    uv
-  ];
+ ];
 
   programs.helix = {
     enable = true;
