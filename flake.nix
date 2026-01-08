@@ -8,6 +8,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
   outputs =
@@ -15,6 +17,7 @@
       self,
       nixpkgs,
       home-manager,
+      claude-code,
       ...
     }@inputs:
     let
@@ -26,7 +29,11 @@
       mkHome =
         extraModules:
         home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs { inherit system; };
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = [ claude-code.overlays.default ];
+            config.allowUnfree = true;
+          };
 
           modules = [
             ./config.nix

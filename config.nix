@@ -15,4 +15,8 @@
     ./modules/gcloud.nix
     ./modules/helix.nix
   ];
+
+  home.packages = with pkgs; [
+    claude-code
+  ];
 }
