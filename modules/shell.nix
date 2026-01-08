@@ -28,6 +28,7 @@ in
     ))
     uv
     ruff
+    graphviz
   ];
 
   programs.zsh = {
