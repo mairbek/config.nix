@@ -17,6 +17,7 @@ in
     nixfmt-rfc-style
     nixfmt-tree
     cmatrix
+    devenv
     (python313.withPackages (
       p:
       (with p; [
