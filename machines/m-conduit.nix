@@ -12,15 +12,13 @@
     MAIRBEK_DOTFILES_MACHINE = "m-conduit";
   };
 
-  programs.git = {
+  programs.git.settings = {
     # override with work email
-    userEmail = "mairbek@conduit.xyz";
-    extraConfig = {
-      commit.gpgsign = true;
-      signing = {
-        key = "1CFC99FE9A558EA3ABFF71421511D513BA410D74";
-        signByDefault = true;
-      };
+    user.email = "mairbek@conduit.xyz";
+    commit.gpgsign = true;
+    signing = {
+      key = "1CFC99FE9A558EA3ABFF71421511D513BA410D74";
+      signByDefault = true;
     };
   };
 }

@@ -88,6 +88,7 @@ in
 
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
 
     # orbstack included
     includes = [ "~/.orbstack/ssh/config" ];

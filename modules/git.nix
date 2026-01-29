@@ -6,15 +6,9 @@
   ...
 }:
 
-let
-  username = lib.mkDefault "Mairbek Khadikov";
-  email = lib.mkDefault "mkhadikov@gmail.com";
-in
 {
   programs.git = {
     enable = true;
-    userName = username;
-    userEmail = email;
 
     ##–– Global ignore file ––––––––––––––––––––––––––––––––––––––
     ignores = [
@@ -26,30 +20,30 @@ in
       ".venv"
     ];
 
-    ##–– Extra git-config not covered by first-class options ––––
-    extraConfig = {
+    ##–– Git settings ––––––––––––––––––––––––––––––––––––––––––––
+    settings = {
+      user.name = lib.mkDefault "Mairbek Khadikov";
+      user.email = lib.mkDefault "mkhadikov@gmail.com";
+
       init.defaultBranch = "master";
       core.editor = "vim";
       core.autocrlf = "input";
       merge.conflictStyle = "zdiff3";
       diff.colorMoved = "default";
       push.autoSetupRemote = true;
-      url."ssh://git@github.com/" = {
-        insteadOf = "https://github.com/";
+      url."ssh://git@github.com/".insteadOf = "https://github.com/";
+      url."ssh://git@gist.github.com/".insteadOf = "https://gist.github.com/";
+
+      alias = {
+        co = "checkout";
+        cob = "checkout -b";
+        ac = "!git add -A && git commit -m";
+        amend = "commit -a --amend";
+        s = "status";
+        fom = "fetch origin main";
+        foms = "fetch origin master";
+        c-p = "cherry-pick";
       };
-      url."ssh://git@gist.github.com/" = {
-        insteadOf = "https://gist.github.com/";
-      };
-    };
-    aliases = {
-      co = "checkout";
-      cob = "checkout -b";
-      ac = "!git add -A && git commit -m";
-      amend = "commit -a --amend";
-      s = "status";
-      fom = "fetch origin main";
-      foms = "fetch origin master";
-      c-p = "cherry-pick";
     };
   };
 }
