@@ -30,6 +30,7 @@ in
     uv
     ruff
     graphviz
+    cursor-cli
   ];
 
   programs.zsh = {
