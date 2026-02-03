@@ -12,14 +12,10 @@
     MAIRBEK_DOTFILES_MACHINE = "mairbook";
   };
 
-  programs.git = {
-    userEmail = "mkhadikov@gmail.com";
-    extraConfig = {
-      commit.gpgsign = true;
-      signing = {
-        key = "F63B7E5365EC20AC134FF33B662CB6EC70C7B9BF";
-        signByDefault = true;
-      };
-    };
+  programs.git.settings = {
+    user.email = "mkhadikov@gmail.com";
+    commit.gpgsign = true;
+    gpg.format = "openpgp";
+    user.signingkey = "F63B7E5365EC20AC134FF33B662CB6EC70C7B9BF";
   };
 }

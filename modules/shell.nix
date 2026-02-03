@@ -14,7 +14,7 @@ in
     jq
     yq-go
     cacert
-    nixfmt-rfc-style
+    nixfmt
     nixfmt-tree
     cmatrix
     devenv
