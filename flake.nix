@@ -26,12 +26,43 @@
 
       hmCli = home-manager.packages.${system}.home-manager;
 
+      # Override claude-code to 2.1.32
+      claudeCodeOverlay = final: prev: {
+        claude-code = final.stdenv.mkDerivation rec {
+          pname = "claude-code";
+          version = "2.1.32";
+
+          src = final.fetchurl {
+            url = "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/${version}/darwin-arm64/claude";
+            sha256 = "1lyrimvhavjd5s4p23i5fws9dlxrgbi4m7xwa5b0lj043h2w66l4";
+          };
+
+          dontUnpack = true;
+          dontStrip = true;
+          dontPatchELF = true;
+
+          installPhase = ''
+            mkdir -p $out/bin
+            cp $src $out/bin/claude
+            chmod +x $out/bin/claude
+          '';
+
+          meta = {
+            description = "Claude Code CLI";
+            mainProgram = "claude";
+          };
+        };
+      };
+
       mkHome =
         extraModules:
         home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [ claude-code.overlays.default ];
+            overlays = [
+              claude-code.overlays.default
+              claudeCodeOverlay
+            ];
             config.allowUnfree = true;
           };
 
