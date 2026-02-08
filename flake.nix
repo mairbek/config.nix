@@ -10,6 +10,8 @@
     };
 
     claude-code.url = "github:sadjow/claude-code-nix";
+
+    opencode.url = "github:anomalyco/opencode/dev";
   };
 
   outputs =
@@ -18,6 +20,7 @@
       nixpkgs,
       home-manager,
       claude-code,
+      opencode,
       ...
     }@inputs:
     let
@@ -38,8 +41,13 @@
           modules = [
             ./config.nix
 
-            # add the CLI to every profile’s ~/.nix-profile
-            { home.packages = [ hmCli ]; }
+            # add the CLI to every profile's ~/.nix-profile
+            {
+              home.packages = [
+                hmCli
+                opencode.packages.${system}.opencode
+              ];
+            }
           ]
           ++ extraModules;
         };

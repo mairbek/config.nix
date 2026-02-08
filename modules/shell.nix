@@ -31,7 +31,6 @@ in
     ruff
     graphviz
     cursor-cli
-    opencode
   ];
 
   programs.zsh = {
